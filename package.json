@@ -1,0 +1,24 @@
+{
+  "name": "xstate_demo_with_api_and_sqlite_persistence",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Order transaction demo with XState 5.x and SQLite",
+  "main": "src/server.js",
+  "scripts": {
+    "initdb": "node ./src/scripts/initdb.js",
+    "start": "nodemon src/server.js",
+    "stop": "pkill -f nodemon"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "nodemon": "^3.1.4",
+    "sequelize": "^6.37.3",
+    "sqlite3": "^5.1.7",
+    "xstate": "^5.18.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Vangelis Tripolitakis",
+  "license": "ISC"
+}
