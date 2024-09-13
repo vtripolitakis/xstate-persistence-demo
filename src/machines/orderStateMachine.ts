@@ -25,7 +25,7 @@ const orderMachine = setup({
         },
         CANCEL_ORDER: {
           target: "cancelled",
-          actions: assign({ orderStatus: () => "PROCESSING" }),
+          actions: assign({ orderStatus: () => "CANCELLED" }),
         },
       },
     },

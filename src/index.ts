@@ -1,7 +1,7 @@
 import express from "express";
 import { createActor } from "xstate";
 import orderMachine from "./machines/orderStateMachine.js";
-import { Order } from "./models/models.js";
+import { Order } from "./models/orders.js";
 
 async function fetchAndReturnActor(uuid: string) {
   // load from file
@@ -71,13 +71,13 @@ app.get("/place_order/:uuid", async (req, res) => {
 });
 
 // Cancel an order
-app.get("/place_order/:uuid", async (req, res) => {
+app.get("/cancel_order/:uuid", async (req, res) => {
   const orderMachineActor = await fetchAndReturnActor(req.params.uuid);
   if (orderMachineActor === null) {
     res.status(404).json({ message: "Order not found" });
   } else {
     orderMachineActor.start();
-    orderMachineActor.send({ type: "PLACE_ORDER" });
+    orderMachineActor.send({ type: "CANCEL_ORDER" });
     await Order.update(
       { snapshot: orderMachineActor.getPersistedSnapshot() },
       { where: { uuid: req.params.uuid } }
