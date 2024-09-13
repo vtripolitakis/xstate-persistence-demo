@@ -1,6 +1,16 @@
-import { assign } from "xstate";
+import { assign, setup} from "xstate";
 
-const orderStateMachine = {
+const orderMachine = setup({
+  types: {
+    context: {} as {
+      orderStatus: string;
+    },
+    events: {} as
+      | { type: "PLACE_ORDER" }
+      | { type: "CANCEL_ORDER" }
+      | { type: "COMPLETE_ORDER" },
+  },
+}).createMachine({
   id: "orderStateMachine",
   initial: "idle",
   context: {
@@ -38,6 +48,6 @@ const orderStateMachine = {
       type: "final",
     },
   },
-};
+});
 
-export default orderStateMachine;
+export default orderMachine;

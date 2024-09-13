@@ -6,12 +6,11 @@
   "main": "src/server.js",
   "scripts": {
     "initdb": "node ./src/scripts/initdb.js",
-    "start": "nodemon src/server.js",
+    "start": "tsx watch src/index.ts",
     "stop": "pkill -f nodemon"
   },
   "dependencies": {
     "express": "^4.21.0",
-    "nodemon": "^3.1.4",
     "sequelize": "^6.37.3",
     "sqlite3": "^5.1.7",
     "xstate": "^5.18.1"
@@ -20,5 +19,13 @@
     "node": ">=18.0.0"
   },
   "author": "Vangelis Tripolitakis",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^22.5.4",
+    "@types/sequelize": "^4.28.20",
+    "@types/sqlite3": "^3.1.11",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  }
 }
