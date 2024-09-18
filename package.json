@@ -5,7 +5,8 @@
   "description": "Order transaction demo with XState 5.x and SQLite",
   "main": "src/server.js",
   "scripts": {
-    "initdb": "node ./src/scripts/initdb.js",
+    "build": "tsc",
+    "startprod": "node dist/index.js",
     "start": "tsx watch src/index.ts",
     "stop": "pkill -f nodemon"
   },
