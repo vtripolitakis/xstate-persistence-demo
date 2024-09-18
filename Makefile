@@ -1,12 +1,7 @@
-.PHONY: setupdb install_node_modules install start stop
+.PHONY: setupdb install start stop
 
-install_node_modules:
+install:
 		npm install
-
-setupdb:
-		npm run initdb
-
-install: install_node_modules setupdb
 
 start:
 		npm run start
