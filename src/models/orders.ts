@@ -1,5 +1,5 @@
 // orders.ts
-import { sequelize } from './db';
+import { sequelize } from './db.js';
 import { DataTypes } from 'sequelize';
 
 // Define the Order state machine persistence

@@ -3,7 +3,7 @@ import { Sequelize } from 'sequelize';
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
-  logging: console.log,
+  logging: false,
   storage: './data/orders.sqlite' // SQLite database file
 });
 
