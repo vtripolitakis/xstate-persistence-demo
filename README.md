@@ -112,6 +112,23 @@ Example Response:
 }
 ```
 
+5. Complete an Order
+Endpoint: `/cancel_order/:uuid`
+Method: `GET`
+
+Description: Transitions the order state to "canceled" for the given UUID.
+
+Example Response:
+
+```json
+{
+  "message": "OK",
+  "uuid": "example-uuid",
+  "value": "canceled",
+  "context": { ... }
+}
+```
+
 ### Technologies Used
 - Node.js: Server-side JavaScript runtime.
 - Express.js: Web framework for Node.js.

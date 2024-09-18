@@ -1,7 +1,7 @@
-[ ] save to SQLite db
+[ X ] save to SQLite db
 [ ] set up docker compose
-[ ] create Makefile
-[ ] add README.md
-[ ] convert to typescript
+[ X ] create Makefile
+[ X ] add README.md
+[ X ] convert to typescript
 [ ] create swagger docs
 [ ] add unit tests
